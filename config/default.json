@@ -1,0 +1,36 @@
+{
+  "mongodb": {
+    "uri": "localhost/app"
+  },
+  "server": {
+    "port": 3030
+  },
+  "jwt": {
+    "cookie": "jwt",
+    "secret": "CHANGEIT"
+  },
+  "oauth": {
+    "facebook": {
+      "clientID": "KEY",
+      "clientSecret": "SECRET",
+      "callbackURL": "BASE_URL/token/facebook/callback",
+      "profileFields": [
+        "id",
+        "email",
+        "displayName"
+      ],
+      "scope": [
+        "email"
+      ]
+    },
+    "google": {
+      "clientID": "KEY",
+      "clientSecret": "SECRET",
+      "callbackURL": "BASE_URL/token/google/callback",
+      "scope": [
+        "profile",
+        "email"
+      ]
+    }
+  }
+}

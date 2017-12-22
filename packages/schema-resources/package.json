@@ -1,0 +1,16 @@
+{
+  "name": "@local/schema-resources",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "dependencies": {
+    "@local/joi-http-errors": "*",
+    "joi": "^13.0.2",
+    "shortid": "^2.2.8"
+  },
+  "devDependencies": {
+    "ava": "^0.24.0"
+  }
+}

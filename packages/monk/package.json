@@ -1,0 +1,25 @@
+{
+  "name": "@local/monk",
+  "version": "0.0.1",
+  "description": "Mirror for Monk",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "dependencies": {
+    "@local/schema-resources": "*",
+    "http-errors": "^1.6.2",
+    "monk": "^6.0.5",
+    "monk-middleware-fields": "^0.2.0",
+    "monk-middleware-handle-callback": "^0.2.2",
+    "monk-middleware-options": "^0.2.1",
+    "monk-middleware-wait-for-connection": "^0.2.0",
+    "ramda": "^0.25.0",
+    "ramda-adjunct": "^2.0.0",
+    "shortid": "^2.2.8"
+  },
+  "devDependencies": {
+    "ava": "^0.24.0",
+    "monk-middleware-debug": "^0.2.0"
+  }
+}

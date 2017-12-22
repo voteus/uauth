@@ -1,0 +1,12 @@
+{
+  "apps": [
+    {
+      "name": "auth",
+      "script": "./servers/auth/server.js",
+      "env": {
+        "NODE_PORT": 3030
+      }
+    }
+  ]
+}
+

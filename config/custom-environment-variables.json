@@ -1,0 +1,8 @@
+{
+  "mongodb": {
+    "uri": "MONGODB_URL"
+  },
+  "server": {
+    "port": "NODE_PORT"
+  }
+}

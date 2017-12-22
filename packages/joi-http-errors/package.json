@@ -1,0 +1,19 @@
+{
+  "name": "@local/joi-http-errors",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "dependencies": {
+    "http-errors": "^1.6.2"
+  },
+  "devDependencies": {
+    "ava": "^0.23.0",
+    "joi": "^13.0.2"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "start": "pm2 start ecosystem.json",
+    "dev": "pm2-dev ecosystem.json"
+  },
+  "devDependencies": {
+    "lerna": "^2.4.0",
+    "pm2": "^2.7.2"
+  }
+}

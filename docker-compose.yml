@@ -1,0 +1,23 @@
+version: '3'
+
+# Containers
+services:
+
+  auth:
+    container_name: auth
+    build: .
+    ports:
+      - "3030:3030"
+    volumes:
+      - "./:/opt/app"
+    links:
+      - mongo
+    environment:
+      MONGODB_URL: mongodb://mongo:27017/auth
+
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27017:27017"

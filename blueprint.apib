@@ -1,0 +1,126 @@
+FORMAT: 1A
+
+# Auth
+
+## General
+
+### Content type
+
+Content type is set to `application/json` for all API calls.
+
+### HTTP Methods
+
+- `GET`
+- `POST`
+
+### HTTP Codes
+
+- `200` - OK status with JSON body
+- `201` - Created
+- `204` - OK status wthout body
+- `400` - Bad Request
+- `401` - Unauthorized
+- `403` - Forbidden
+- `409` - Conflict
+- `422` - Bad data
+- `500` - Internal Server Error
+
+## Authentication
+
++ This API uses [JWT](http://jwt.io/) for authentication
++ Token must be provided in `Authorization` header, using `Bearer` schema
+
+**Example Header**
+
+```
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ikh5RmF5ZVhsRyIsImlhdCI6MTUxMTM1NzQ0OX0.8OcUXW7crw_UnPaf8_WceLSzQ-Bxj1eFEkefh0IEehg
+```
+
+### OAuth Endpoints
+
+- *Facebook* - `/token/facebook`
+- *Google* - `/token/google`
+
+# Group Auth
+
+## Token Resource [/token]
+
+### Local [POST]
+
++ Attributes (object)
+    - Include User Email
+    - Include User Password
+    
++ Request
+
+        {
+            "email": "exo@gmail.com",
+            "password": "passw0rd"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "body": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJib2R5Ijp7Im5hbWUiOiJFeG8iLCJlbWFpbCI6ImV4b0BnbWFpbC5jb20ifSwiaWQiOiJCeXVsQjRxR0ciLCJ0eXBlIjoidXNlcnMiLCJpYXQiOjE1MTM5Mjc5MzR9.HNwzNISlsZZqQDG9QXEjIlSp2iC8emn6V6kRUkaLb6w"
+        }
+
+### OAuth with Facebook [GET /token/facebook]
+
++ Response 302
+
+### OAuth with Google [GET /token/google]
+
++ Response 302
+
+## User Resource [/user]
+
++ Attributes (User Ref)
+    + `body` (object)
+        + Include User Email
+        + Include User Name
+
+### Create a user [POST]
+
++ Request (application/json)
+
+        {
+            "name": "Exo",
+            "email": "exo@gmail.com",
+            "password": "passw0rd"
+        }
+
++ Response 201 (application/json)
+
+### Get current user [GET]
+
++ Request 
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJib2R5Ijp7Im5hbWUiOiJFeG8iLCJlbWFpbCI6ImV4b0BnbWFpbC5jb20ifSwiaWQiOiJCeXVsQjRxR0ciLCJ0eXBlIjoidXNlcnMiLCJpYXQiOjE1MTM5Mjc5MzR9.HNwzNISlsZZqQDG9QXEjIlSp2iC8emn6V6kRUkaLb6w
+
+
++ Response 200 (application/json)
+
+        {
+            "id": "B177Dktff",
+            "type": "users",
+            "body": {
+                "name": "Exo",
+                "email": "exo@gmail.com"
+            }
+        }
+
+# Data structures
+
+## User Email (object)
++ `email`: `exo@gmail.com` (string, required)
+
+## User Password (object)
++ `password`: `passw0rd` (string, required)
+
+## User Name (object)
++ `name`: `Exo` (string, required)
+
+## User Ref
++ `id`: `B177Dktff` (string, required)
++ `type`: `users` (string, required)
