@@ -1,4 +1,4 @@
-# Auth
+# uAuth
 
 ## Prerequisites
 
